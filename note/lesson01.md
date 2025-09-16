@@ -87,8 +87,28 @@ console.log(num3);
 ```
 
 ## 2.Kiểu dữ liệu (Data Types)
-- Kiểu nguyên thuỷ (Primitive types): `string`, `number`, `boolean`, `null`, `undefined`, `symbol`
-- Kiểu tham chiếu (Reference types): `object`, `array`, `function`
+### A. Kiểu dữ liệu nguyên thủy (Primitive Types)
+Là các giá trị đơn giản, không thể thay đổi `(immutable)`, gồm:
+
+| Kiểu          | Mô tả                                    | Ví dụ                   |
+| ------------- | ---------------------------------------- | ----------------------- |
+| **String**    | Chuỗi văn bản                            | `"Hello"`, `'JS'`       |
+| **Number**    | Số (cả số nguyên và số thực)             | `10`, `3.14`            |
+| **Boolean**   | Đúng hoặc sai                            | `true`, `false`         |
+| **Undefined** | Biến đã khai báo nhưng chưa gán giá trị  | `let x;`                |
+| **Null**      | Đại diện cho "không có giá trị"          | `let y = null;`         |
+| **BigInt**    | Số nguyên rất lớn (ES2020)               | `12345678901234567890n` |
+| **Symbol**    | Giá trị duy nhất, thường dùng làm key ẩn | `Symbol("id")`          |
+
+### B. Kiểu dữ liệu phức tạp - tham chiếu (Reference Types)
+Là các đối tượng phức tạp, lưu theo địa chỉ bộ nhớ:
+
+| Kiểu                             | Mô tả                        | Ví dụ                     |
+| -------------------------------- | ---------------------------- | ------------------------- |
+| **Object**                       | Tập hợp các cặp key-value    | `{ name: "JS", age: 25 }` |
+| **Array**                        | Danh sách các phần tử        | `[1, 2, 3]`               |
+| **Function**                     | Hàm (cũng là object)         | `function sayHi() {}`     |
+| **Date, RegExp, Map, Set, v.v.** | Các kiểu đặc biệt của object | `new Date()`, `new Map()` |
 
 ### Kiểu nguyên thủy - Tham trị
 #### 2.1 String - chuỗi
@@ -97,7 +117,7 @@ let name = "chinhpd5";
 console.log(typeof(name));
 ```
 > Có thể dùng '', "", hoặc `` (template string)
-> Hữu ích: .length, .toUpperCase(), .includes(), ...
+> Hữu ích: `.length`, `.toUpperCase()`, `.includes()`, ...
 
 #### 2.2 Number - số
 ```js
@@ -320,6 +340,21 @@ switch (biến) {
 > Có thể nhóm nhiều `case` lại với nhau.
 > Chỉ dùng `switch` khi có nhiều giá trị cố định.
 
+Bài tập:
+Viết chương trình nhập vào mã xếp loại (A, B, C, D, F) và in ra mô tả học lực tương ứng:
+| Mã   | Mô tả        |
+| ---- | ------------ |
+| A    | Xuất sắc     |
+| B    | Giỏi         |
+| C    | Khá          |
+| D    | Trung bình   |
+| F    | Yếu          |
+| khác | Không hợp lệ |
+> Dùng switch...case
+> Không dùng if...else
+> Mã xếp loại có thể nhập chữ thường hoặc in hoa → nên chuyển về chữ in hoa trước khi switch
+> Gợi ý nhận giá trị nhập từ bàn phím `let grade = prompt("Nhập mã xếp loại (A, B, C, D, F):");`
+
 ### 4.2 Vòng lặp
 Vòng lặp dùng để lặp lại một đoạn mã nhiều lần.
 
@@ -387,6 +422,34 @@ for (let i = 1; i <= 5; i++) {
 ```
 > Biến thể `for`: `for...of`, `for...in`
 > Nâng cao: `forEach`
+
+## Bài tập:
+Cho mảng dữ liệu sinh viên:
+```js
+let students = [
+  { name: "An", score: 8 },
+  { name: "Bình", score: 4.5 },
+  { name: "Chi", score: 6.5 },
+  { name: "Dũng", score: 3 },
+  { name: "Hà", score: 9 }
+];
+```
+### Yêu cầu 1: In ra danh sách sinh viên và xếp loại theo điểm
+- Nếu `score >= 8`: loại `Giỏi`
+- Nếu `score >= 5`: loại `Trung bình`
+- Nếu `score < 5`: loại `Yếu`
+> Sử dụng vòng `for` và `if...else` để in: Ví dụ: ` An - 8 điểm - Giỏi`
+
+### Yêu cầu 2: Đếm số lượng sinh viên theo loại học lực
+Sau khi xếp loại, in ra:
+- Số sinh viên Giỏi.
+- Số sinh viên Trung bình.
+- Số sinh viên Yếu.
+> Sử dụng `forEach` và `if...else`
+
+### Yêu cầu 3: Tìm sinh viên có điểm cao nhất
+> In ra tên và điểm của sinh viên cao điểm nhất
+> Sử dụng `for` hoặc `forEach`, Ví dụ: `Sinh viên có điểm cao nhất: Hà - 9 điểm`
 
 ## 5. Hàm
 Hàm `(function)` là một khối mã được định nghĩa để thực hiện một nhiệm vụ cụ thể. Hàm giúp chia nhỏ chương trình thành các phần riêng biệt, dễ đọc, dễ quản lý và tái sử dụng.
