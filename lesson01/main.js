@@ -38,4 +38,56 @@ function sayHello1() {
 
 // console.log(c);
 
+// kiểu tham trị: Tham chiếu về giá trị
+var x = 1;
+var y = x;
+x = 2;
+
+// console.log(x); // 2
+// console.log(y); // 1
+
+// Kiểu tham chiếu: tham chiếu về vị trí nhớ
+var x = {
+  value : 1
+}
+var y = x;
+x.value = 2;
+
+// console.log(x.value); // 2
+// console.log(y.value); // 2
+
+
+// string: chuỗi
+
+var name = 'chinhpd5';
+name = "chinhpd6";
+name = `chinhpd7`; //template string
+
+console.log(`Xin chào ${name}`);
+
+// number: số
+var age = 20;
+var mark = 9.5;
+var test = 'a' / 1;
+console.log(test);
+console.log(typeof test);
+console.log(1/0);
+console.log(-1/0);
+
+// boolean: true/false
+var gender = true;
+console.log(true);
+
+// null
+var love = null;
+console.log(love);
+
+
+// undefined
+var hobby;
+console.log(hobby);
+
+
+
+
 
