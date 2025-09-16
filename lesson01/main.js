@@ -54,5 +54,62 @@ function testScope(){
 
 // console.log(x);
 
+// Biến tham trị: kiểu dữ liệu nguyên thủy: string, number, boolean,...
+var x = 1; // 1
+var y = x; // 1 -> gán giá trị của x cho y
+x = 2; // 2
+
+// console.log(x); // 2
+// console.log(y); // 1
+
+// Biến tham chiếu: kiểu dữ liệu phức tạp: object, array,...
+var x = {value : 1};
+var y = x; // gán vị trí nhớ của x cho y
+x.value = 2;
+
+// console.log(x.value); // 2
+// console.log(y.value); // 2
+
+// Biến nguyên thủy
+
+// string: chuỗi
+var myName = 'chinhpd5';
+var myName = "chinhpd5";
+var myName = `chinhpd5`; // template string
+
+console.log(`Xin chào ${myName}`);
+console.log(typeof myName);
+
+// number: số
+var myAge = 20;
+var myMark = 9.5;
+
+console.log(myMark);
+console.log(typeof myMark);
+var test = 'a'/1;
+console.log(typeof test);
+console.log(-1/0);
+
+// boolean : true/false
+var myGender = true
+console.log(typeof myGender);
+
+// null
+var testNull = 'abc';
+testNull = null;
+console.log(typeof null); //object
+
+// undefined
+var myUndefined;
+console.log(myUndefined);
+console.log(typeof myUndefined);
+
+
+
+
+
+
+
+
 
 
