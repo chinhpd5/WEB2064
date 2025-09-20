@@ -38,5 +38,11 @@ if(mark >= 9) {
   console.log("Yếu");
 }
 
+var gender = false;
+var result = gender == true ? "Nam" : "Nữ";
+
+console.log(result);
+
+
 
 
