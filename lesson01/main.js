@@ -125,10 +125,35 @@ myArr2.shift();
 
 myArr2.splice(1,2,10);
 
-console.log(myArr2);
+// console.log(myArr2);
 // console.log(length);
 
-console.log(typeof myArr2); // object
+// console.log(typeof myArr2); // object
+
+
+// object
+let myInfo = {
+  name: 'chinhpd5',
+  age: 20,
+  gender: true
+}
+
+console.log(myInfo.name);
+// console.log(myInfo.age1); // undefined
+console.log(typeof myInfo);
+
+// function - hàm
+
+sayHi(); // hoisting
+
+function sayHi(){
+  // logic code
+  console.log("Xin chào các bạn");
+}
+
+console.log(typeof sayHi);
+
+
 
 
 
