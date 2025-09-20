@@ -106,7 +106,31 @@ myArr.shift();
 
 myArr.splice(2,1,2.5);
 
-console.log(myArr);
+// console.log(myArr);
+
+var myInfo = {
+  name: "chinhpd5",
+  age: 20,
+  gender: true
+}
+myInfo.home = "Hà Nội"
+
+// console.log(myInfo.name);
+// console.log(myInfo.age);
+// console.log(myInfo);
+
+// console.log(typeof myInfo);
+
+// in nội dung xin chào
+function sayHi() {
+  // logic code
+  console.log("Xin chào các bạn");
+}
+sayHi();
+
+console.log(typeof sayHi);
+
+
 
 
 
