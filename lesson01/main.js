@@ -77,32 +77,63 @@ var myName = 'chinhpd5';
 var myName = "chinhpd5";
 var myName = `chinhpd5`; // template string
 
-console.log(`Xin chào ${myName}`);
-console.log(typeof myName);
+// console.log(`Xin chào ${myName}`);
+// console.log(typeof myName);
 
 // number: số
 var myAge = 20;
 var myMark = 9.5;
 
-console.log(myMark);
-console.log(typeof myMark);
-var test = 'a'/1;
-console.log(typeof test);
-console.log(-1/0);
+// console.log(myMark);
+// console.log(typeof myMark);
+// var test = 'a'/1;
+// console.log(typeof test);
+// console.log(-1/0);
 
 // boolean : true/false
 var myGender = true
-console.log(typeof myGender);
+// console.log(typeof myGender);
 
 // null
 var testNull = 'abc';
 testNull = null;
-console.log(typeof null); //object
+// console.log(typeof null); //object
 
 // undefined
 var myUndefined;
-console.log(myUndefined);
-console.log(typeof myUndefined);
+// console.log(myUndefined);
+// console.log(typeof myUndefined);
+
+
+// Biến tham chiếu
+// array
+
+var myArr = [1, "chinhpd5", true, null, undefined];
+
+// console.log(myArr);
+
+var myArr2 = [1, 0, -2, 4.5];
+
+// console.log(myArr2[2]);
+// console.log(myArr2.length);
+
+var length = myArr2.push(1,2,3,4)
+myArr2.unshift(-1,-2)
+
+var lastDelete = myArr2.pop();
+myArr2.shift();
+
+myArr2.splice(1,2,10);
+
+console.log(myArr2);
+// console.log(length);
+
+console.log(typeof myArr2); // object
+
+
+
+
+
 
 
 
