@@ -63,29 +63,50 @@ var name = 'chinhpd5';
 name = "chinhpd6";
 name = `chinhpd7`; //template string
 
-console.log(`Xin chào ${name}`);
+// console.log(`Xin chào ${name}`);
 
 // number: số
 var age = 20;
 var mark = 9.5;
 var test = 'a' / 1;
-console.log(test);
-console.log(typeof test);
-console.log(1/0);
-console.log(-1/0);
+// console.log(test);
+// console.log(typeof test);
+// console.log(1/0);
+// console.log(-1/0);
 
 // boolean: true/false
 var gender = true;
-console.log(true);
+// console.log(true);
 
 // null
 var love = null;
-console.log(love);
+// console.log(love);
 
 
 // undefined
 var hobby;
-console.log(hobby);
+// console.log(hobby);
+
+
+// Biến tham chiếu
+// array - mảng
+
+var myArr = [1, 2, 3, 5.4, -2.3];
+
+var myArr2 = [1, 'chinhpd5', true,0];
+
+// console.log(myArr[1]);
+// console.log(myArr2.length);
+
+myArr.push(1, 2, 3);
+myArr.unshift(-1);
+
+myArr.pop();
+myArr.shift();
+
+myArr.splice(2,1,2.5);
+
+console.log(myArr);
 
 
 
