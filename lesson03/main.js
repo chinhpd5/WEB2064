@@ -137,7 +137,7 @@ var obj2 = {
 var newObj = {...obj1, ...obj2}
 // console.log(newObj);
 
-var a = {value : 1, obj: {value : 1}}; // deep clone
+var a = {value : 1}; // deep clone
 var b = {...a}; // clone obj
 a.value = 2;
 
