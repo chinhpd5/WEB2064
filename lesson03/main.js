@@ -64,7 +64,7 @@ var logging = text => `Log: ${text}`;
 // console.log(logging("Lỗi abc"));
 
 // destructring
-const [a, , , c] = [1,2,3,4];
+var [a, , , c] = [1,2,3,4];
 
 // console.log(a);
 // // console.log(b);
@@ -79,13 +79,41 @@ var {name, age, child: {name : childName, gender}} = {
   }
 }
 
+// console.log(name);
+// console.log(age);
+// console.log(childName);
+// console.log(gender);
+
+
+// rest ...
+const sum = (a,...rest) => {
+  // rest : [2, 3]
+  for(let i = 0; i < rest.length; i++){
+    a += rest[i];
+  }
+  return a
+}
+
+// console.log(sum(1,2,3));
+// console.log(sum(1,2,3,4,5,6));
+// console.log(sum(1,2,3,4,5,6,7,8,9));
+
+// rest kết hợp destructring trong array và object
+var [a, ...item] = [1,2,3,4]
+// console.log(a);
+// console.log(item);
+var {name, ...restObj} = {
+  name: "chinhpd5",
+  age: 20,
+  child : {
+    name: "chinhpd6",
+    gender: true
+  }
+}
+
 console.log(name);
-console.log(age);
-console.log(childName);
-console.log(gender);
+console.log(restObj);
 
-
-// rest
 
 // spread
 
