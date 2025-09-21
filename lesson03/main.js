@@ -75,16 +75,42 @@ var { name, age, child: {name : childName, home} } = {
   }
 }
 
+// console.log(name);
+// console.log(age);
+// console.log(childName);
+// console.log(home);
+
+// rest ...
+const sum = (a,...rest) => {
+  // console.log(a);
+  // console.log(rest);
+  for(let i = 0; i < rest.length; i++){
+    a += rest[i]
+  }
+  return a;
+}
+
+// console.log(sum(1,2,3));
+// console.log(sum(1,2,3,4,5,6));
+// console.log(sum(1,2,3,4,5,6,7,8,9));
+
+// kết hợp rest với destructering
+var [a,...item] = [1,2,3,4,5,6]
+// console.log(a);
+// console.log(item);
+var {name, ...itemObj} = {
+  name: 'chinhpd5',
+  age: 20,
+  child: {
+    name: 'chinhpd6',
+    home: 'Hà Nội'
+  }
+}
+
 console.log(name);
-console.log(age);
-console.log(childName);
-console.log(home);
+console.log(itemObj);
 
 
 
-
-
-
-// rest
 
 // spread
