@@ -37,5 +37,29 @@ function tinhTinh(a = 3,b = 3,c = 3) {
   return a*b;
 }
 
-console.log(tinhTinh(3));
+// console.log(tinhTinh(3));
+
+// Expression function
+var sayHello3 = function() {
+  console.log(`Chào mừng bạn đến với JS Nâng cao`);
+}
+
+// sayHello3()
+
+// Arrow function
+var sayHello4 = (name,a,b) => {
+  console.log(`Tạm biệt ${name}`);
+} 
+
+// sayHello4(`chinhpd5`);
+var logging1 = (text) => {
+  // Không có logic code
+  text = `${text} xyz`
+  return `Log: ${text}`;
+}
+
+// arrow function viết gọn: chỉ có 1 tham số, chỉ có 1 hàm return
+var logging = text => `Log: ${text}`;
+
+console.log(logging("Lỗi abc"));
 
