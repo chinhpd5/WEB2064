@@ -61,5 +61,31 @@ var logging1 = (text) => {
 // arrow function viết gọn: chỉ có 1 tham số, chỉ có 1 hàm return
 var logging = text => `Log: ${text}`;
 
-console.log(logging("Lỗi abc"));
+// console.log(logging("Lỗi abc"));
+
+// destructring
+const [a, , , c] = [1,2,3,4];
+
+// console.log(a);
+// // console.log(b);
+// console.log(c);
+
+var {name, age, child: {name : childName, gender}} = {
+  name: "chinhpd5",
+  age: 20,
+  child : {
+    name: "chinhpd6",
+    gender: true
+  }
+}
+
+console.log(name);
+console.log(age);
+console.log(childName);
+console.log(gender);
+
+
+// rest
+
+// spread
 
