@@ -23,3 +23,9 @@ if(mark < 5){
 }else{
   console.log("Giỏi");
 }
+
+var gender = false;
+
+const result = gender == true ? "Nam" : "Nữ";
+
+console.log(result);
