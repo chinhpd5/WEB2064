@@ -107,10 +107,39 @@ var {name, ...itemObj} = {
   }
 }
 
-console.log(name);
-console.log(itemObj);
+// console.log(name);
+// console.log(itemObj);
+
+
+// spread ...
+var arr1 = [1,2];
+var arr2 = [3,4];
+// [1,2,3,4]
+
+var newArr = [...arr1, ...arr2];
+// console.log(newArr);
+
+var obj1 = {
+  name: 'chinhpd5',
+  age: 20
+}
+
+var obj2 = {
+  home: 'Hà Nội',
+  age: 21
+}
+
+var newObj = {...obj1, ...obj2}
+
+// console.log(newObj);
+// clone object (1 cấp)
+
+var a = {value : 1, child: {value : 2}}; // deep clone
+var b = {...a}; // spread
+a.value = 2;
+
+console.log(a.value);
+console.log(b.value);
 
 
 
-
-// spread
