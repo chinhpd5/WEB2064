@@ -21,7 +21,23 @@ const pTagElement = document.getElementsByTagName('p');
 
 
 // trả về NodeList: Mảng chứa các phần tử
-console.log(document.querySelectorAll('.paragraph'));
+// console.log(document.querySelectorAll('.paragraph'));
+
+// Thêm mới
+const h2Element = document.createElement('h2');
+h2Element.textContent = 'Đây là thẻ h2';
+// console.log(h2Element);
+
+const parent = document.getElementById('parent');
+parent.appendChild(h2Element);
+
+// xóa
+// cách 1: xóa phần tử con từ cha
+parent.removeChild(h2Element)
+// xóa 1 phần tử bất kỳ
+h1Element.remove();
+
+
 
 
 
