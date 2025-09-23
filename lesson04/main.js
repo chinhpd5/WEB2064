@@ -21,6 +21,25 @@ const pTagElemnts = document.getElementsByTagName('p');// trả về HTMLCollect
 // console.log(document.querySelector('h1#title1')); // tag
 
 // trả về NodeList: Mảng chứa các phần tử
-console.log(document.querySelectorAll('.paragraph'));
+// console.log(document.querySelectorAll('.paragraph'));
+
+// thêm
+// tạo thẻ
+const h2Child = document.createElement('h2');
+// thêm nội dung
+h2Child.textContent = 'Đây là thẻ h2'
+// console.log(h2Child);
+// add vào 1 phần tử nào đó
+document.body.appendChild(h2Child)
+
+// Xóa
+const parent = document.querySelector('.parent');
+// console.log(parent);
+
+const h1Child = document.querySelector('.parent .paragraph');
+// console.log(h1Child);
+
+parent.removeChild(h1Child);
+
 
 
