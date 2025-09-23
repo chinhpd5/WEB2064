@@ -86,7 +86,7 @@ var {name, age, child: {name : childName, gender}} = {
 
 
 // rest ...
-const sum = (a,...rest) => {
+const sum = (a, ...rest) => {
   // rest : [2, 3]
   for(let i = 0; i < rest.length; i++){
     a += rest[i];
