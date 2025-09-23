@@ -1,268 +1,161 @@
-# DOM - Document Object Model
+# Lesson 3: Ôn tập kiến thức cơ bản về JavaScript (Tiếp)
 
-`DOM` là một tiêu chuẩn do `W3C` `(World Wide Web Consortium)` định nghĩa, dùng để biểu diễn cấu trúc của một trang web dưới dạng cây các đối tượng (object).
+## 5. Hàm
+Hàm `(function)` là một khối mã được định nghĩa để thực hiện một nhiệm vụ cụ thể. Hàm giúp chia nhỏ chương trình thành các phần riêng biệt, dễ đọc, dễ quản lý và tái sử dụng.
+Cách đặt tên hàm giống với các đặt tên biến.
+>Nên đặt tên hàm theo camelCase
 
-Nói cách khác:
-`DOM` biến toàn bộ nội dung `HTML` thành một cây các đối tượng mà `JavaScript` có thể truy cập và thay đổi.
+### 5.1. Declaration Function (Khai báo hàm truyền thống)
+```js
+function tenHam() {
+  // nội dung hàm
+}
 
-![alt text](image.png)
+tenham();
+```
+> + Có thể gọi trước khi khai báo (do hoisting).
+> + Là cách khai báo truyền thống và rõ ràng.
+> Ví dụ:
+```js
+sayHello();
 
-## DOM gồm 3 thành phần chính
-- `Element` (`node` - nút): Mỗi phần tử `HTML` là một `element` `(node)` (ví dụ: thẻ `<p>`, `<div>`, `văn bản`, `comment`...)
+function sayHello() {
+  console.log("Hello world!");
+}
+```
+#### Tham số trong hàm (parameter)
+Tham số là biến được khai báo trong định nghĩa của hàm. Khi bạn gọi hàm, bạn sẽ truyền đối số `(argument)` vào các tham số này để hàm xử lý.
+> Tham số `(parameter)`: Là biến định nghĩa trong hàm.
+> Đối số `(argument)`: Là giá trị thực tế được truyền vào khi gọi hàm.
+```js
+function tinhTong(a, b) {   // a và b là THAM SỐ
+  console.log(a + b); // Kết quả: 8
+}
 
-- `Attribute` (thuộc tính): Là các thuộc tính của phần tử `HTML` như `id`, `class`, `src`, `style`...
-
-- `Text`: Đại diện cho nội dung chữ nằm giữa thẻ mở và đóng `HTML`.'
-```html
-<p id="demo" class="pragraph">Xin chào!</p>
-<!-- 
-  <p></p> là Element 
-  id, class là Attribute
-  Xin chào! là Text
---> 
+tinhTong(5, 3); // 5 và 3 là ĐỐI SỐ
 ```
 
-## Element - Thẻ HTML - phần tử
-- Đại diện cho các thẻ `HTML` như `<h1>`, `<p>`, `<div>`, `<img>`, v.v.
-- Mỗi phần tử `HTML` sẽ được trình duyệt "dịch" thành một đối tượng `JavaScript` để bạn có thể truy cập và thao tác.
-
-```html
-<h1 id="title">Lập trình JavaScript Nâng cao</h1>
-
-<p class="paragraph">JavaScript là ngôn ngữ lập</p>
-<p class="paragraph">Nó có thể tính toán, xử lý và xác thực dữ liệu</p>
-<p class="paragraph">Nó có thể cập nhật và thay đổi cả HTML và CSS.</p>
+#### return trong hàm
+Trả về giá trị từ một hàm.
+```js
+function tinhTong(a, b) {
+  return a + b; // trả về tổng của a và b
+}
+let kq = tinhTong(3, 5);
+console.log(kq); //8
+```
+> Khi `return` được gọi: 
+> + Hàm dừng lại ngay lập tức.
+```js
+function test() {
+  console.log("Bắt đầu");
+  return;
+  console.log("Dòng này sẽ không chạy");
+}
+test(); // Chỉ in "Bắt đầu"
+```
+> + Giá trị đi sau `return` sẽ được trả về cho nơi gọi hàm.
+```js
+function tinhTong(a, b) {
+  return 10;
+  return a + b; // trả về tổng của a và b
+}
+let kq = tinhTong(3, 5);
+console.log(kq); 10
 ```
 
-### Cách lấy phần tử (Truy cập Element)
-- id, class, tag
-- css selector
+#### Default Parameter
+Tham số mặc định cho phép bạn gán sẵn giá trị cho tham số trong khai báo hàm. Nếu người dùng không truyền giá trị khi gọi hàm, thì giá trị mặc định sẽ được sử dụng.
+```js
+function tenHam(thamSo = giaTriMacDinh) {
+  // thân hàm
+}
+
+function greet(name = "Guest") {
+  console.log("Xin chào, " + name);
+}
+
+greet(); // "Xin chào, Guest"
+greet("Hà");   
+```
+
+### 5.2. Expression Function (Hàm gán cho biến)
 
 ```js
-// id
-let element = document.getElementById("title");
-
-// class
-let listClass = document.getElementsByClassName("paragraph");
-
-// tag
-var listTag = document.getElementsByTagName('p');
+const tenHam = function(thamSo1, thamSo2) {
+  // nội dung
+  return giaTri;
+};
+tenHam();
 ```
+> + Không thể gọi trước khi khai báo.
+
+### 5.3. Arrow Function*
+```js
+const tenHam = (thamSo1, thamSo2) => {
+  // nội dung
+  return giaTri;
+};
+tenHam();
+```
+
+Viết ngắn gọn hơn nếu chỉ có 1 dòng return:
+```js
+const add = (a, b) => a + b;
+```
+
+## Destructuring
+`Destructuring` là cú pháp cho phép “phân rã” giá trị từ `mảng` hoặc `object` thành các biến riêng biệt một cách ngắn gọn và rõ ràng.
 
 ```js
-// css selector
+const [a, b, c] = [1, 2, 3];
+console.log(a); // 1
 
-// id (#)
-var element = document.querySelector('#title');
-
-// class (.)
-var element = document.querySelector('.paragraph');
-
-// tag
-var element = document.querySelector('h1');
-
-// querySelectorAll
-var paras = document.querySelectorAll('.paragraph');
+const person = { name: "An", age: 20 };
+const { name, age } = person;
+console.log(name); // "An"
 ```
 
-### Cách thêm phần tử mới
-- Dùng `createElement` và `appendChild`
-```js
-let newP = document.createElement("p"); // tạo phần tử mới
-newP.textContent = "Nội dung thêm mới";
-document.body.appendChild(newP); // thêm vào cuối body
-```
-
-### Cách xóa phần tử
-- Dùng `removeChild()`
-```js
-let parent = document.getElementById("container");
-let child = document.getElementById("info");
-parent.removeChild(child);
-```
-- Dùng `element.remove()` (cách ngắn gọn hơn, trình duyệt mới)
-```js
-document.getElementById("info").remove();
-```
-
-### Bài tập
-Tạo một trang HTML đơn giản như sau:
-
-```html
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Bài tập DOM</title>
-</head>
-<body>
-  <h1>Danh sách học viên</h1>
-
-  <ul id="student-list">
-    <li>Nguyễn Văn A</li>
-    <li>Trần Thị B</li>
-  </ul>
-
-  <input type="text" id="student-name" placeholder="Nhập tên học viên mới">
-  <button onclick="addStudent()">Thêm học viên</button>
-  <button onclick="removeLastStudent()">Xoá học viên cuối cùng</button>
-
-  <script src="script.js"></script>
-</body>
-</html>
-```
-Yêu cầu:
-- Lấy danh sách học viên.
-- Thêm học viên mới khi nhấn nút "Thêm học viên".
-> Gợi ý lấy giá trị trong ô input thông qua thuộc tính `.value`
-> Nâng cao (Cộng điểm): Khi thêm Kiểm tra trùng tên trước khi thêm mới
-- Xoá học viên cuối cùng trong danh sách.
-
----
-## Attribute - thuộc tính
-`Attribute` (thuộc tính) là những thông tin bổ sung cho phần tử `HTML`, nằm bên trong thẻ mở.
-```js
-<img src="image.png" alt="Ảnh DOM" width="300">
-<a id="link" href="https://example.com" target="_blank">Trang web</a>
-```
-> Trong đó:
-> - src, alt, width là attribute
-> - "hinh.jpg", "Ảnh đẹp", "300" là giá trị của attribute
-
-### Lấy giá trị thuộc tính
-```js
-let link = document.getElementById("link");
-let href = link.getAttribute("href"); // "https://example.com"
-```
-
-### Thêm mới hoặc sửa giá trị thuộc tính
-```js
-link.setAttribute("href", "https://caodang.fpt.edu.vn/"); // cập nhật lại href
-link.setAttribute("class", "btn btn-primary");   // thêm class mới
-
-let img = document.querySelector("img");
-img.src = "new-image.jpg"; // cách này nhanh và dễ nhớ
-img.alt = "Ảnh thay thế";
-```
-> Nếu attribute chưa tồn tại → sẽ được thêm mới
-> Nếu đã tồn tại → sẽ bị ghi đè
-
-### Xoá thuộc tính
+### REST
+`Rest` (...) là cú pháp dùng để gom các giá trị “còn lại” thành một mảng hoặc object.
 
 ```js
-link.removeAttribute("target");
+function sum(...numbers) {
+  let total = 0;
+  for (let num of numbers) {
+    total += num;
+  }
+  return total;
+}
+console.log(sum(1, 2, 3)); // 6
 ```
-### Bài tập
-Tạo một trang web có một bức ảnh và một đường link. Thực hiện các hành động thay đổi thuộc tính ảnh và liên kết khi bấm nút.
 
-```html
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Thực hành Attribute</title>
-</head>
-<body>
-  <h2>Ảnh đại diện</h2>
-  <img id="avatar" src="avatar1.jpg" alt="Ảnh 1" width="200"><br><br>
+`Rest` trong `Destructuring` (Phân rã)
+```js
+let [first, ...others] = [1, 2, 3, 4];
+console.log(first);   // 1
+console.log(others);  // [2, 3, 4]
 
-  <a id="profile-link" href="https://facebook.com" target="_blank">Đi tới Facebook</a><br><br>
 
-  <button onclick="changeAvatar()">Đổi ảnh</button>
-  <button onclick="toggleBorder()">Thêm/Xoá viền</button>
-  <button onclick="changeLink()">Đổi liên kết</button>
-  <button onclick="removeAlt()">Xoá thuộc tính alt</button>
-
-  <script src="script.js"></script>
-</body>
-</html>
+let { name, ...info } = {
+  name: "Hà",
+  age: 20,
+  email: "ha@example.com"
+};
+console.log(name); // "Hà"
+console.log(info); // { age: 20, email: "ha@example.com" }
 ```
-Yêu cầu:
-- Đổi thuộc tính `src` để đổi ảnh
-- Thêm hoặc xoá viền bằng `style` hoặc `class`
-- Thay đổi đường dẫn liên kết (`href`) và nội dung
-- Xoá thuộc tính `alt` của ảnh
+> Chỉ có thể có một rest, và phải nằm cuối cùng
 
-## Text
-- `Text` là nội dung văn bản bên trong các phần tử `HTML` (`Element`).
-- `DOM` xem phần chữ như một đối tượng riêng, không phải là phần tử.
-
-```html
-<p>Xin chào!</p>
-```
-> Thẻ `<p>` là `Element`
-> Nội dung `Xin chào!` là `Text`
-
-### Lấy nội dung văn bản
+### Spread
+`Spread` (...) là cú pháp giúp “tách rời” (trải ra) các phần tử của `mảng` hoặc `object` tại nơi bạn cần các giá trị rời rạc.
 
 ```js
-let h1 = document.getElementById("title");
-let text = h1.textContent;
-console.log(text);
+let x = [1, 2];
+let y = [3, 4];
+let z = [...x, ...y]; // [1, 2, 3, 4]
+
+let a = { x: 1 };
+let b = { y: 2 };
+let c = { ...a, ...b }; // { x: 1, y: 2 }
 ```
-
-### Sửa nội dung văn bản
-```js
-h1.textContent = "Chào bạn!";
-```
-
-### Thêm văn bản (nối chuỗi)
-```js
-h1.textContent += " - Học lập trình ngay!";
-```
-
-### Bài tập:
-Tạo một trang hiển thị tiêu đề và nút. Khi bấm nút sẽ đổi nội dung chữ hoặc thêm văn bản mới.
-```html
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Bài tập Text</title>
-</head>
-<body>
-  <h2 id="greeting">Xin chào sinh viên FPoly!</h2>
-
-  <button onclick="changeText()">Đổi lời chào</button>
-  <button onclick="addText()">Thêm câu khích lệ</button>
-
-  <script src="script.js"></script>
-</body>
-</html>
-```
-Yêu cầu: 
-- Đổi nội dung văn bản sang: "Chào bạn, chúc bạn học tốt!".
-- Thêm câu động viên vào cuối dòng: "Bạn là người tuyệt vời!"
-
-## Bài tập tổng hợp
-Tạo giao diện HTML như sau:
-```html
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Thông tin sản phẩm</title>
-</head>
-<body>
-  <div id="product-card">
-    <h2 id="product-name">iPhone 15 Pro</h2>
-    <img id="product-img" src="iphone.jpg" alt="iPhone" width="200"><br>
-    <p id="product-price">Giá: 28.000.000đ</p>
-  </div>
-
-
-  <button onclick="changeName()">Đổi tên sản phẩm</button>
-  <button onclick="changeImage()">Đổi ảnh</button>
-  <button onclick="hideProduct()">Ẩn sản phẩm</button>
-  <button onclick="showProduct()">Hiện sản phẩm</button>
-
-  <script src="script.js"></script>
-</body>
-</html>
-```
-
-Yêu cầu khi click vào các nút bấm sẽ thực hiện:
-- Đổi tên sản phẩm thành `iPhone 15 Ultra Max Pro Max`
-- Đổi ảnh sản phẩm sang ảnh khác
-- Ẩn/hiện toàn bộ sản phẩm
-- 
