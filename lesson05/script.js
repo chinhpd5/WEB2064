@@ -24,3 +24,12 @@ const removeAlt = () => {
     img.removeAttribute('alt')
   }
 }
+
+const changeText = () => {
+  const h2Element = document.getElementById('greeting');
+  h2Element.textContent = 'Chào mừng các bạn'
+}
+
+const addText = () => {
+  document.body.innerHTML += '<h1>Chúc mừng các bạn<h1>'
+}
