@@ -29,3 +29,15 @@ const removeAlt = () => {
     img.removeAttribute('alt')
   }
 }
+
+// text 
+// Câu 1:
+const changeText = () => {
+  const h2 = document.getElementById('greeting');
+  h2.textContent = 'Chào mừng các bạn'
+}
+
+// câu 2:
+const addText = () => {
+  document.body.innerHTML += '<h2>Chào mừng bạn đến với lớp WD20308</h2>'
+}
