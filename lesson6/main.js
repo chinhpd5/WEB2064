@@ -1,4 +1,4 @@
-const arr = [2,30,3,21,-1,15];
+const arr = [2, 30, 3, 21, -1, 15];
 
 // console.log(arr.sort((a,b)=> b-a));
 
@@ -27,7 +27,7 @@ console.log(students);
 // })
 
 // find
-const findItem = students.find((item,index)=>{
+const findItem = students.find((item, index) => {
   // return item.age == 19;
   // console.log(index);
   // return item.mark == 10;
@@ -40,7 +40,7 @@ const findItem = students.find((item,index)=>{
 
 // every
 
-const every = students.every((item,index)=>{
+const every = students.every((item, index) => {
   // console.log(index);
   // return item.age > 19
   return item.gender
@@ -49,7 +49,7 @@ const every = students.every((item,index)=>{
 // console.log(every);
 
 // some 
-const some = students.some((item,index) => {
+const some = students.some((item, index) => {
   // console.log(index);
   // return item.gender
   return item.mark <= 1
@@ -59,16 +59,50 @@ const some = students.some((item,index) => {
 
 // map
 
-const map = students.map((item,index) => {
+const map = students.map((item, index) => {
   return {
     // name: item.name,
     // age: item.age
     ...item, //spread
-    gender: item.gender ? 'Nam': 'Nữ'
+    gender: item.gender ? 'Nam' : 'Nữ'
   };
 })
 
-console.log(map);
+// console.log(map);
+
+const resultMap = students.map((item, index) => {
+  let hocLuc = ''
+  if (item.mark >= 8) {
+    hocLuc = 'Giỏi'
+  } else if (item.mark >= 6.5) {
+    hocLuc = 'Khá'
+  } else {
+    hocLuc = 'Yếu'
+  }
+  return `${item.name} có điểm ${item.mark}, học lực: ${hocLuc}`
+})
+
+// console.log(resultMap);
+
+const trElements = students.map((item,index) => {
+  return `
+    <tr>
+      <td>${index+1}</td>
+      <td>${item.name}</td>
+      <td>${item.age}</td>
+      <td>${item.gender ? 'Nam': 'Nữ'}</td>
+      <td>${item.mark}</td>
+      <td>${item.mark >= 8 ? 'Giỏi': item.mark >= 6.5 ? "Khá": "Trung bình"}</td>
+    </tr>
+  `
+}).join('') // join chuyển 1 mảng -> chuỗi
+
+// console.log(trElements);
+
+const tbodyElement = document.querySelector('tbody');
+tbodyElement.innerHTML = trElements
+
+
 
 
 
