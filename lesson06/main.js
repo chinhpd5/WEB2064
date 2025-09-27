@@ -64,7 +64,34 @@ const mapResult = students.map((item,index)=>{
   }
 })
 
-console.log(mapResult);
+// console.log(mapResult);
+
+const result1 = students.map((item,index) => {
+  return `${item.name} có điểm ${item.mark}, 
+    học lực: ${item.mark >= 8 ? 'Giỏi': item.mark >=6? 'Khá': 'Yếu'} `
+})
+
+// console.log(result1);
+
+const trElement = students.map((item,index) => {
+  return `
+    <tr>
+      <td>${index+1}</td>
+      <td>${item.name}</td>
+      <td>${item.age}</td>
+      <td>${item.gender ? 'Nam': 'Nữ'}</td>
+      <td>${item.mark}</td>
+      <td>${item.mark >= 8 ? 'Giỏi': item.mark >=6? 'Khá': 'Yếu'}</td>
+    </tr>
+  `
+}).join(''); // join chuyển 1 mảng về thành chuỗi
+
+// console.log(trElement);
+const tbodyElement = document.querySelector('tbody');
+tbodyElement.innerHTML = trElement;
+
+
+
 
 
 
