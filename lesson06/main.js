@@ -82,6 +82,7 @@ const trElement = students.map((item,index) => {
       <td>${item.gender ? 'Nam': 'Nữ'}</td>
       <td>${item.mark}</td>
       <td>${item.mark >= 8 ? 'Giỏi': item.mark >=6? 'Khá': 'Yếu'}</td>
+      <td><button onclick="handleDelete()">Xóa</button></td>
     </tr>
   `
 }).join(''); // join chuyển 1 mảng về thành chuỗi
@@ -89,6 +90,15 @@ const trElement = students.map((item,index) => {
 // console.log(trElement);
 const tbodyElement = document.querySelector('tbody');
 tbodyElement.innerHTML = trElement;
+
+
+// filter
+
+const filterResult = students.filter((item,index) =>{
+  return !item.gender
+})
+
+console.log(filterResult);
 
 
 
