@@ -50,11 +50,25 @@ const every = students.every((item,index)=>{
 
 // some 
 const some = students.some((item,index) => {
-  console.log(index);
+  // console.log(index);
   // return item.gender
   return item.mark <= 1
 })
 
-console.log(some);
+// console.log(some);
+
+// map
+
+const map = students.map((item,index) => {
+  return {
+    // name: item.name,
+    // age: item.age
+    ...item, //spread
+    gender: item.gender ? 'Nam': 'Nữ'
+  };
+})
+
+console.log(map);
+
 
 
