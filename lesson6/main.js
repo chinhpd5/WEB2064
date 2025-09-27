@@ -2,7 +2,7 @@ const arr = [2, 30, 3, 21, -1, 15];
 
 // console.log(arr.sort((a,b)=> b-a));
 
-const students = [
+let students = [
   { name: "Hà", age: 20, gender: false, mark: 8.5 },
   { name: "Long", age: 21, gender: true, mark: 6.8 },
   { name: "Trang", age: 19, gender: false, mark: 9.2 },
@@ -84,16 +84,16 @@ const resultMap = students.map((item, index) => {
 
 // console.log(resultMap);
 
-const trElements = students.map((item,index) => {
+const trElements = students.map((item, index) => {
   return `
     <tr>
-      <td>${index+1}</td>
+      <td>${index + 1}</td>
       <td>${item.name}</td>
       <td>${item.age}</td>
-      <td>${item.gender ? 'Nam': 'Nữ'}</td>
+      <td>${item.gender ? 'Nam' : 'Nữ'}</td>
       <td>${item.mark}</td>
-      <td>${item.mark >= 8 ? 'Giỏi': item.mark >= 6.5 ? "Khá": "Trung bình"}</td>
-      <td><button onclick="handleDelete()">Xóa</button></td>
+      <td>${item.mark >= 8 ? 'Giỏi' : item.mark >= 6.5 ? "Khá" : "Trung bình"}</td>
+      <td><button onclick="handleDelete(${index})">Xóa</button></td>
     </tr>
   `
 }).join('') // join chuyển 1 mảng -> chuỗi
@@ -104,11 +104,44 @@ const tbodyElement = document.querySelector('tbody');
 tbodyElement.innerHTML = trElements
 
 // filter
-const filter = students.filter((item)=>{
+const filter = students.filter((item) => {
   return !item.gender
 })
 
-console.log(filter);
+// console.log(filter);
+
+
+const handleDelete = (value) => {
+  if(!window.confirm("Bạn có chắc chắn muốn xóa không?")){
+    return;
+  }
+
+  students = students.filter((item, index) => {
+    return index != value
+  })
+
+  // console.log(students);
+
+  const trElements = students.map((item, index) => {
+    return `
+    <tr>
+      <td>${index + 1}</td>
+      <td>${item.name}</td>
+      <td>${item.age}</td>
+      <td>${item.gender ? 'Nam' : 'Nữ'}</td>
+      <td>${item.mark}</td>
+      <td>${item.mark >= 8 ? 'Giỏi' : item.mark >= 6.5 ? "Khá" : "Trung bình"}</td>
+      <td><button onclick="handleDelete(${index})">Xóa</button></td>
+    </tr>
+  `
+  }).join('') // join chuyển 1 mảng -> chuỗi
+
+  // console.log(trElements);
+
+  const tbodyElement = document.querySelector('tbody');
+  tbodyElement.innerHTML = trElements
+
+}
 
 
 
