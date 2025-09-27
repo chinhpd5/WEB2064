@@ -1,9 +1,9 @@
-const arr = [5,-2,3,10,1,20];
+const arr = [5, -2, 3, 10, 1, 20];
 
 // console.log(arr.sort((a,b) => a-b));
 // console.log(arr.sort((a,b) => b-a));
 
-const students = [
+let students = [
   { name: "Hà", age: 20, gender: false, mark: 8.5 },
   { name: "Long", age: 21, gender: true, mark: 6.8 },
   { name: "Trang", age: 19, gender: false, mark: 9.2 },
@@ -28,7 +28,7 @@ console.log(students);
 // })
 
 // find
-const findItem = students.find((item,index) => {
+const findItem = students.find((item, index) => {
   // return item.name == "Trang"
   // console.log(index);
   // return item.age < 20
@@ -40,14 +40,14 @@ const findItem = students.find((item,index) => {
 // console.log(findItem);
 
 // every
-const everyCheck = students.every((item,index)=>{
+const everyCheck = students.every((item, index) => {
   // console.log(index);
   return item.age >= 20
 })
 // console.log(everyCheck);
 
 // some
-const someCheck = students.some((item,index) => {
+const someCheck = students.some((item, index) => {
   // console.log(index);
   return item.mark < 3
 })
@@ -56,7 +56,7 @@ const someCheck = students.some((item,index) => {
 
 // map
 
-const mapResult = students.map((item,index)=>{
+const mapResult = students.map((item, index) => {
   // return item.name
   return {
     ...item, // spread
@@ -66,23 +66,23 @@ const mapResult = students.map((item,index)=>{
 
 // console.log(mapResult);
 
-const result1 = students.map((item,index) => {
+const result1 = students.map((item, index) => {
   return `${item.name} có điểm ${item.mark}, 
-    học lực: ${item.mark >= 8 ? 'Giỏi': item.mark >=6? 'Khá': 'Yếu'} `
+    học lực: ${item.mark >= 8 ? 'Giỏi' : item.mark >= 6 ? 'Khá' : 'Yếu'} `
 })
 
 // console.log(result1);
 
-const trElement = students.map((item,index) => {
+const trElement = students.map((item, index) => {
   return `
     <tr>
-      <td>${index+1}</td>
+      <td>${index + 1}</td>
       <td>${item.name}</td>
       <td>${item.age}</td>
-      <td>${item.gender ? 'Nam': 'Nữ'}</td>
+      <td>${item.gender ? 'Nam' : 'Nữ'}</td>
       <td>${item.mark}</td>
-      <td>${item.mark >= 8 ? 'Giỏi': item.mark >=6? 'Khá': 'Yếu'}</td>
-      <td><button onclick="handleDelete()">Xóa</button></td>
+      <td>${item.mark >= 8 ? 'Giỏi' : item.mark >= 6 ? 'Khá' : 'Yếu'}</td>
+      <td><button onclick="handleDelete(${index})">Xóa</button></td>
     </tr>
   `
 }).join(''); // join chuyển 1 mảng về thành chuỗi
@@ -94,11 +94,44 @@ tbodyElement.innerHTML = trElement;
 
 // filter
 
-const filterResult = students.filter((item,index) =>{
+const filterResult = students.filter((item, index) => {
   return !item.gender
 })
 
 console.log(filterResult);
+
+const handleDelete = (index) => {
+
+  if(!window.confirm("Bạn có chắc chắn muốn xóa không?")){
+    return;
+  }
+
+  // console.log(index);
+  students = students.filter((item, i) => {
+    return i != index
+  })
+
+  // console.log(students);
+
+  const trElement = students.map((item, index) => {
+    return `
+    <tr>
+      <td>${index + 1}</td>
+      <td>${item.name}</td>
+      <td>${item.age}</td>
+      <td>${item.gender ? 'Nam' : 'Nữ'}</td>
+      <td>${item.mark}</td>
+      <td>${item.mark >= 8 ? 'Giỏi' : item.mark >= 6 ? 'Khá' : 'Yếu'}</td>
+      <td><button onclick="handleDelete(${index})">Xóa</button></td>
+    </tr>
+  `
+  }).join(''); // join chuyển 1 mảng về thành chuỗi
+
+  // console.log(trElement);
+  const tbodyElement = document.querySelector('tbody');
+  tbodyElement.innerHTML = trElement;
+
+}
 
 
 
