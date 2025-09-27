@@ -30,8 +30,28 @@ console.log(students);
 // find
 const findItem = students.find((item,index) => {
   // return item.name == "Trang"
-  console.log(index);
-  return item.age < 20
+  // console.log(index);
+  // return item.age < 20
+  // return !item.gender
+  // return item.age <= 19
+  return item.mark == 6.8
 });
 
-console.log(findItem);
+// console.log(findItem);
+
+// every
+const everyCheck = students.every((item,index)=>{
+  // console.log(index);
+  return item.age >= 20
+})
+// console.log(everyCheck);
+
+// some
+const someCheck = students.some((item,index) => {
+  console.log(index);
+  return item.mark < 3
+})
+
+console.log(someCheck);
+
+
