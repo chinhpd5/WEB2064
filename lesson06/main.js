@@ -48,10 +48,23 @@ const everyCheck = students.every((item,index)=>{
 
 // some
 const someCheck = students.some((item,index) => {
-  console.log(index);
+  // console.log(index);
   return item.mark < 3
 })
 
-console.log(someCheck);
+// console.log(someCheck);
+
+// map
+
+const mapResult = students.map((item,index)=>{
+  // return item.name
+  return {
+    ...item, // spread
+    gender: item.gender ? 'Nam' : 'Nữ'
+  }
+})
+
+console.log(mapResult);
+
 
 
