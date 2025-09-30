@@ -144,7 +144,8 @@ Bài tập sử dụng `map()`
       <td>6.8</td>
       <td>Khá</td>
     </tr>
-  </tbody
+  </tbody>
+</table>
 
 ``` 
 > Gợi ý sử dụng phương thức `join()` để chuyển 1 mảng về 1 chuỗi
