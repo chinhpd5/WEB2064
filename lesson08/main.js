@@ -30,7 +30,7 @@ const chinhPerson = new Person(1,'chinhpd5', 17, true);
 
 // console.log(chinhPerson.isAdult() ? 'Trưởng thành': 'Chưa trưởng thành' );
 
-// Tính kế thừa
+// Tính kế thừa - Tính đa hình
 
 class Student extends Person {
   constructor(id,name, age, gender, className, mark){
@@ -47,15 +47,22 @@ class Student extends Person {
     else if(this.mark >=5) return 'Trung bình'
     else return 'Yếu' 
   }
+
+  getInfo() {
+    super.getInfo();
+    console.log(`Sinh viên: ${this.name}, học lớp lớp: ${this.className}, Học lực: ${this.getRank()}`);
+  }
+
 }
 
 const chinhStudent = new Student(2,'chinhpd6',20,false,'WD20308', 8);
-console.log(chinhStudent.name);
-console.log(chinhStudent.mark);
-console.log(chinhStudent.className);
+// console.log(chinhStudent.name);
+// console.log(chinhStudent.mark);
+// console.log(chinhStudent.className);
 
+// chinhStudent.getInfo();
+// console.log(chinhStudent.getRank());
 chinhStudent.getInfo();
-console.log(chinhStudent.getRank());
 
 
 
