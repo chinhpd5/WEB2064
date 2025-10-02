@@ -31,7 +31,7 @@ const chinhPerson = new Person(1,'chinhpd5',20,true);
 class Student extends Person{
 
   constructor(id, name, age, gender, className, mark){
-    super(id, name, age, gender);
+    super(id, name, age, gender); // kế thừa thuộc tính cũ
 
     // thuộc tính mới
     this.className = className;
@@ -47,18 +47,33 @@ class Student extends Person{
   }
 
   getInfo(){
-    // super.getInfo();
+    // super.getInfo(); // kế thừa phương thức cũ
     console.log(`sinh viên: ${this.name}, học lớp: ${this.className}, học lực: ${this.getRank()}`);
   }
 }
 
 const chinhStudent = new Student(2,'chinhpd6', 21, false, 'WD20309', 8);
 
-console.log(chinhStudent.className);
-console.log(chinhStudent.mark);
-console.log(chinhStudent.name);
+// console.log(chinhStudent.className);
+// console.log(chinhStudent.mark);
+// console.log(chinhStudent.name);
 
-console.log(chinhStudent.getRank());
-chinhStudent.getInfo()
+// console.log(chinhStudent.getRank());
+// chinhStudent.getInfo()
 
+// tính đa hình
+
+class Teacher extends Person{
+  constructor(id, name, age, gender){
+    super(id, name, age, gender)
+  }
+
+  getInfo(){
+    console.log(`Mới: Giảng viên: ${this.name}, tuổi: ${this.age}`);
+  }
+}
+
+const chinhTeacher = new Teacher(3,'chinhpd7', 25,true);
+
+chinhTeacher.getInfo();
 
