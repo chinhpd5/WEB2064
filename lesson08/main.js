@@ -1,5 +1,5 @@
 class Person {
-  #id;
+  #id; // private
   // thuộc tính
   constructor(id,name, age, gender){
     // public
@@ -19,11 +19,43 @@ class Person {
   }
 }
 
-const chinhPerson = new Person(1,'chinhpd5', 20, true);
+const chinhPerson = new Person(1,'chinhpd5', 17, true);
 
-console.log(chinhPerson.name);
-console.log(chinhPerson.age);
-console.log(chinhPerson.gender);
-console.log(chinhPerson.id); // undefined
+// console.log(chinhPerson.name);
+// console.log(chinhPerson.age);
+// console.log(chinhPerson.gender);
+// console.log(chinhPerson.id); // undefined
 
-chinhPerson.getInfo();
+// chinhPerson.getInfo();
+
+// console.log(chinhPerson.isAdult() ? 'Trưởng thành': 'Chưa trưởng thành' );
+
+// Tính kế thừa
+
+class Student extends Person {
+  constructor(id,name, age, gender, className, mark){
+    super(id,name, age, gender);
+    // thêm thuộc tính
+    this.className = className;
+    this.mark = mark;
+  }
+
+  // thêm phương thức
+  getRank(){
+    if(this.mark >= 9) return 'Giỏi'
+    else if(this.mark >= 7) return 'Khá'
+    else if(this.mark >=5) return 'Trung bình'
+    else return 'Yếu' 
+  }
+}
+
+const chinhStudent = new Student(2,'chinhpd6',20,false,'WD20308', 8);
+console.log(chinhStudent.name);
+console.log(chinhStudent.mark);
+console.log(chinhStudent.className);
+
+chinhStudent.getInfo();
+console.log(chinhStudent.getRank());
+
+
+
