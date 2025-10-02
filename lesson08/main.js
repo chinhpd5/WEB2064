@@ -69,7 +69,7 @@ class Teacher extends Person{
   }
 
   getInfo(){
-    console.log(`Mới: Giảng viên: ${this.name}, tuổi: ${this.age}`);
+    console.log(`Giảng viên: ${this.name}, tuổi: ${this.age}`);
   }
 }
 
