@@ -103,6 +103,30 @@ class Teacher extends Person {
     console.log(`Tôi là giảng viên ${this.name}, dạy môn ${this.subject}`);
   }
 }
-
-
 ```
+
+### Tính trừu tượng - Abstraction
+Là khả năng ẩn đi chi tiết phức tạp bên trong, chỉ cung cấp những gì cần thiết cho bên ngoài sử dụng.
+> JS không có `abstract class` như `Java`, `C#`, `PHP`,...
+
+## Bài tập
+1. Tạo lớp trừu tượng ProductBase
+Các thuộc tính:
+- `name`
+- `price`
+- `#id` (private)
+
+Các phương thức:
+- `getInfo()` → `Hiển thị thông tin sản phẩm`
+- `getId()` → trả về ID sản phẩm
+- `isValid() `→ kiểm tra nếu price > 0
+
+2. Tạo lớp Product kế thừa ProductBase
+- Bổ sung thuộc tính `quantity`
+- Override getInfo() → `Để in thông tin đầy đủ sản phẩm`
+- `over()` → kiểm tra số lượng > 10
+
+3. Tạo mảng productList để chứa ít nhất 3 sản phẩm từ class `Product`
+- Duyệt mảng và hiển thị danh sách sản phẩm
+- Duyệt mảng và hiển thị danh sách sản phẩm có số lượng > 10
+- Tính tổng tiền tất cả các sản phẩm
