@@ -1,10 +1,10 @@
 // cách 1
-const sayHello = () =>{
-  console.log("Xin chào");
+const sayHello = (name) =>{
+  console.log(`Xin chào ${name}`);
 }
 
 const greeting = (callback) =>{
-  callback();
+  callback('chinhpd5');
 }
 
 // greeting(sayHello)
@@ -23,22 +23,66 @@ const delayCallback = (ms,cb) =>{
 }
 
 const doingCallback = ()=>{
-  console.log(1);
-  delayCallback(2000,(data)=>{
-    console.log(data);
-    console.log(3);
-
-    //----
-    delayCallback(1500,(data)=>{
-      console.log(data);
-
-      //----
-      delayCallback(1000,(data)=>{
-        console.log(data);
-      })
-    })
+  delayCallback(2000,(res)=>{
+    console.log(res);
   })
   
 }
 
-doingCallback()
+// doingCallback()
+// callback hell
+
+// promise
+const myPromise = new Promise((resolve, reject)=>{
+  const isCheck = true;
+  if(isCheck){
+    resolve("Thành công")
+  }else{
+    reject("Thất bại")
+  }
+})
+
+// myPromise
+//   .then((data)=>{
+//     console.log(data);
+//   })
+//   .catch((err)=>{
+//     console.log(err);
+//   })
+//   .finally(()=>{
+//     console.log('Hoàn thành');
+//   })
+
+const delayPromise =(ms) =>{
+  return new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      const isCheck = true;
+      if(isCheck){
+        resolve(`Chờ... ${ms/1000}s`)
+      }else{
+        reject("Thất bại")
+      }
+    },ms)
+  })
+}
+
+const doingPromise = () => {
+  
+  delayPromise(2000)
+    .then((data)=>{
+      console.log(data); 
+      return delayPromise(1500)
+    })
+    .then(data => {
+      console.log(data);
+      return delayPromise(1000)
+    })
+    .then(data=>{
+      console.log(data);
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+}
+
+doingPromise();
