@@ -96,5 +96,44 @@ const doingPromise = () =>{
     })
 }
 
-doingPromise()
+// doingPromise()
 
+// async/await
+
+const doingAsync = async () =>{
+  try {
+    console.log("Bắt đầu")
+    console.log(await delayPromise(2000)); // bất đồng bộ
+    console.log("Kết thúc");
+    console.log(await delayPromise(1000));
+    console.log(await delayPromise(1500));
+  } catch (error) {
+    console.log(error);
+  }
+}
+// doingAsync()
+// async function test (){}
+
+const getData = async ()=>{
+  try {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/users`); // bất đồng bộ
+    // console.log(res); // đồng bộ
+    const data = await res.json();
+    console.log(data);
+    renderData(data)
+  } catch (error) {
+    alert("Lỗi: "+ error.message)
+  }
+}
+
+getData();
+
+const renderData = (list) =>{
+  const liList = list.map((item,index)=>{
+    return `<li>${index+1} | ${item.name} | ${item.phone} </li>`
+  }).join('');
+
+  // console.log(liList);
+  const ulElement = document.querySelector('ul');
+  ulElement.innerHTML = liList;
+}
