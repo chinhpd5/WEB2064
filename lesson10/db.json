@@ -1,0 +1,49 @@
+{
+  "products" : [
+    {
+      "id": 1,
+      "name": "Laptop Dell XPS 13",
+      "price": 25000000,
+      "category": "Laptop",
+      "stock": 10,
+      "status": true,
+      "image": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2024/11/06/loq-15arp9-83jc003yvn-1.png"
+    },
+    {
+      "id": 2,
+      "name": "iPhone 17 Pro Max",
+      "price": 29990000,
+      "category": "Điện thoại",
+      "stock": 0,
+      "status": false,
+      "image": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2025/09/10/iphone-17-pro-max-cosmic-orange-pdp-image-position-1-cosmic-orange-color-vn-vi.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Samsung Galaxy S25 Ultra",
+      "price": 22990000,
+      "category": "Điện thoại",
+      "stock": 8,
+      "status": true,
+      "image": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2025/01/23/galaxy-s25-ultra-titan-silver-blue-1-8225f9e1f4.png"
+    },
+    {
+      "id": 4,
+      "name": "Tai nghe AirPods Pro 2",
+      "price": 5500000,
+      "category": "Phụ kiện",
+      "stock": 20,
+      "status": true,
+      "image": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2023/10/27/airpods-pro-2nd-gen-usb-c-1.png"
+    },
+    {
+      "id": 5,
+      "name": "Màn hình LG UltraWide 34 inch",
+      "price": 14990000,
+      "category": "Màn hình",
+      "stock": 0,
+      "status": false,
+      "image": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2025/02/05/egm27f180pv-1.jpg"
+    }
+  ]
+}
