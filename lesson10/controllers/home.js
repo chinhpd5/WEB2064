@@ -25,7 +25,7 @@ const renderData = (list) => {
             <h5 class="card-title">${item.name}</h5>
             <p class="card-text">${item.price.toLocaleString('vi-VN')} VNĐ</p>
             <div class="d-flex justify-content-around">
-              <a href="#" class="btn btn-primary px-3">Mua ngay</a>
+              <button onclick="handleAddCart(${item.id})"  class="btn btn-primary px-3">Add Cart</button>
               <a href="product-detail.html?id=${item.id}" class="btn btn-outline-success px-3">Chi tiết</a>
             </div>
           </div>
@@ -94,6 +94,50 @@ const handleChangeSelect = async () => {
     renderData(filters)
   }else{
     renderData(data)
+  }
+}
+
+const handleAddCart = async (id) => {
+  // console.log(id);
+  // lấy cart trong localStorage
+  let cart = JSON.parse(localStorage.getItem('cart')) || []; // chuyển từ JSON-> Object
+
+  // console.log(cart);
+  // Kiểm tra cart đã tồn tại sản phẩm đó hay chưa
+  const findProduct = cart.find(item => item.idProduct == id)
+
+  // nếu chưa có sản phẩm
+  if(!findProduct){
+    // lấy thông tin sản phẩm
+    const product = await getProductByid(id);
+    cart.push({
+      idProduct: id,
+      name: product.name,
+      image: product.iamge,
+      quantity: 1,
+      price: product.price
+    })
+  }else{
+    // nếu sản phẩm đã tồn tại trong cart -> tăng số lượng
+    findProduct.quantity++; // biến tham chiếu
+    // cart[index].quantity++;
+  }
+
+  // cập nhật lại giỏ hàng trong localStorage
+  localStorage.setItem('cart',JSON.stringify(cart))
+
+}
+
+const getProductByid = async (id) =>{
+  if(id){
+    try {
+      const res = await fetch(`http://localhost:3000/products/${id}`);
+      const data = await res.json();
+      // console.log(data);
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 
