@@ -27,7 +27,7 @@ const renderProducts = (list) =>{
             <p class="card-text">${item.price} VNĐ</p>
             <div class="d-flex justify-content-around">
               <a href="product-detail.html?id=${item.id}" class="btn btn-primary px-4">Chi tiết</a>
-              <a href="#" class="btn btn-outline-success px-4">Add cart</a>
+              <button onclick="handleAddCart(${item.id})" class="btn btn-outline-success px-4">Add cart</button>
             </div>
           </div>
         </div>
@@ -83,6 +83,52 @@ const handleSelect = async () => {
   }
   renderProducts(filters)
   
+}
+
+const handleAddCart = async (id) => {
+  // localStorage.setItem('name','chinhpd5')  
+  // console.log(localStorage.getItem('name'));
+  const carts = JSON.parse(localStorage.getItem('carts')) || []; // JSON.parse chuyển JSON-> object
+
+  // console.log(id);
+  const findItem = carts.find(item => item.idProduct == id);
+
+  if(!findItem){
+    const product = await getProductById(id);
+    carts.push({
+      idProduct : id,
+      name: product.name,
+      price: product.price,
+      quantity: 1,
+      image: product.image
+    })
+  }else{
+    // carts[index].quantity++
+    findItem.quantity++
+  }
+  
+  // update lại carts trong localStorage
+  localStorage.setItem("carts",JSON.stringify(carts));
+  alert("Thêm giỏ hàng thành công")
+}
+
+const getProductById = async (id) => {
+  
+  if(id){
+    console.log(123);
+    
+    try {
+      const res = await fetch(`http://localhost:3000/products/${id}`);
+      const data = await res.json();
+      console.log(data);
+      
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }else{
+    alert("không tìm thấy sản phẩm")
+  }
 }
 
 init();
