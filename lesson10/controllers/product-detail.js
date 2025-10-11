@@ -1,25 +1,8 @@
+import {getProductById} from '../services/product.js'
+
 const param = new URLSearchParams(window.location.search);
 let id = param.get('id');
 // console.log(id);
-
-const getProductById = async (id) => {
-  
-  if(id){
-    console.log(123);
-    
-    try {
-      const res = await fetch(`http://localhost:3000/products/${id}`);
-      const data = await res.json();
-      console.log(data);
-      
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  }else{
-    alert("không tìm thấy sản phẩm")
-  }
-}
 
 const init = async () => {
   const product = await getProductById(id);
