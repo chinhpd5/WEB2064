@@ -1,16 +1,7 @@
-const getData = async () =>{
-  try {
-    const res = await fetch(`http://localhost:3000/products`);
-    const data = await res.json();
-    // console.log(data);
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
-}
+import { getAllProducts, getProductById } from "../services/product.js";
 
 const init = async () => {
-  const data = await getData();
+  const data = await getAllProducts();
   renderData(data);
   renderCategory(data);
 }
@@ -25,7 +16,7 @@ const renderData = (list) => {
             <h5 class="card-title">${item.name}</h5>
             <p class="card-text">${item.price.toLocaleString('vi-VN')} VNĐ</p>
             <div class="d-flex justify-content-around">
-              <button onclick="handleAddCart(${item.id})"  class="btn btn-primary px-3">Add Cart</button>
+              <button data-id="${item.id}" class="btn btn-primary px-3 btn-add-cart">Add Cart</button>
               <a href="product-detail.html?id=${item.id}" class="btn btn-outline-success px-3">Chi tiết</a>
             </div>
           </div>
@@ -37,14 +28,16 @@ const renderData = (list) => {
   // console.log(listElement);
   const listProduct = document.getElementById('product-list');
   listProduct.innerHTML = listElement;
+
+  handCart();
 }
 
-const handleSearch = async (e) =>{
-  e.preventDefault(); // ngăn chặn hành vi tải trang mặc định khi submit form
+document.getElementById('form-search').addEventListener('submit', async (e)=> {
+  e.preventDefault();
   const inputValue = document.getElementById('input-search').value;
   // console.log(inputValue);
 
-  const data = await getData();
+  const data = await getAllProducts();
   const filter = data.filter((item)=>{
     return item.name.toLowerCase().includes(inputValue.toLowerCase())
   })
@@ -55,7 +48,7 @@ const handleSearch = async (e) =>{
     return;
   }
   renderData(filter)
-}
+})
 
 const renderCategory = (list) => {
   // lấy tất cả danh mục từ danh sách sản phẩm
@@ -82,11 +75,12 @@ const renderCategory = (list) => {
   select.innerHTML = options
 }
 
-const handleChangeSelect = async () => {
+
+document.getElementById('select-catefory').addEventListener('change', async () => {
   const selectValue = document.getElementById('select-catefory').value;
   // console.log(selectValue);
 
-  const data = await getData();
+  const data = await getAllProducts();
   if(selectValue != -1){
     const filters = data.filter((item)=>{
       return item.category == selectValue
@@ -95,7 +89,7 @@ const handleChangeSelect = async () => {
   }else{
     renderData(data)
   }
-}
+})
 
 const handleAddCart = async (id) => {
   // console.log(id);
@@ -109,7 +103,7 @@ const handleAddCart = async (id) => {
   // nếu chưa có sản phẩm
   if(!findProduct){
     // lấy thông tin sản phẩm
-    const product = await getProductByid(id);
+    const product = await getProductById(id);
     cart.push({
       idProduct: id,
       name: product.name,
@@ -128,17 +122,18 @@ const handleAddCart = async (id) => {
 
 }
 
-const getProductByid = async (id) =>{
-  if(id){
-    try {
-      const res = await fetch(`http://localhost:3000/products/${id}`);
-      const data = await res.json();
-      // console.log(data);
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
+
+const handCart = () => {
+  const btnAddCarts = document.querySelectorAll('.btn-add-cart');
+  console.log(btnAddCarts);
+  btnAddCarts.forEach(item => {
+    // lấy giá trị id trong thuộc tính data-id của button
+    let id = item.getAttribute('data-id')
+    item.addEventListener('click', () => {
+      handleAddCart(id)
+    })
+  })
 }
+
 
 init();
