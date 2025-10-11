@@ -24,3 +24,18 @@ export const getProductById = async (id) => {
     alert("không tìm thấy sản phẩm")
   }
 }
+
+export const removeProduct = async (id) => {
+  try {
+    if (window.confirm("Bạn có muốn xóa không?")) {
+      const res = await fetch(`http://localhost:3000/products/${id}`,{
+      method: 'delete'
+    })
+    if(res.ok){
+      alert("Xóa thành công")
+    }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
