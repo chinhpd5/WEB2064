@@ -7,5 +7,8 @@ export var myFunction = () => {
 var myHome = 'Hà Nội';
 const myGender = true;
 
+const myKey = 123;
 
-export {myHome, myGender}
+
+export {myHome, myGender};
+export default myKey;
