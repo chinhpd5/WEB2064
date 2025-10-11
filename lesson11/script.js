@@ -8,7 +8,12 @@ export const myFunction = () => {
 const myGender = true;
 const myHome = 'Hà Nội';
 
+const myKey = 123456;
+
 export {
   myGender,
   myHome
 }
+
+// chỉ có duy nhất 1 export default
+export default myKey;
