@@ -98,7 +98,7 @@
     <main class="content">
       <div class="container-fluid">
         <div class="d-flex justify-content-between align-items-center mb-4">
-          <h2 class="m-0">Thêm mới sản phẩm</h2>
+          <h2 class="m-0">Cập nhật sản phẩm</h2>
           <div class="d-flex gap-2 align-items-center">
             <input class="form-control form-control-sm" style="width:220px" placeholder="Tìm kiếm..." />
             <button class="btn btn-primary btn-sm">Tìm</button>
@@ -129,7 +129,7 @@
           <div class="mb-3">
             <label for="category" class="form-label">Danh mục</label>
             <select class="form-select" id="category">
-              <option selected value="-1">Open this select category</option>
+              <option value="-1">Open this select category</option>
               <option value="Laptop">Laptop</option>
               <option value="Điện thoại">Điện thoại</option>
               <option value="Phụ kiện">Phụ kiện</option>
@@ -144,6 +144,7 @@
                 Còn hàng
               </label>
             </div>
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="status" value="0" id="outStock">
               <label class="form-check-label" for="outStock">
@@ -158,7 +159,7 @@
       </div>
     </main>
   </div>
-  <script type="module" src="../../controllers/admin/product-add.js"></script>
+  <script type="module" src="../../controllers/admin/product-edit.js"></script>
 </body>
 
 </html>

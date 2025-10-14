@@ -10,13 +10,13 @@
       "image": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2024/11/06/loq-15arp9-83jc003yvn-1.png"
     },
     {
-      "id": "2",
-      "name": "iPhone 17 Pro Max",
+      "name": "iPhone 17 Pro Max update",
       "price": 29990000,
+      "image": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2025/09/10/iphone-17-pro-max-cosmic-orange-pdp-image-position-1-cosmic-orange-color-vn-vi.jpg",
+      "stock": 10,
       "category": "Điện thoại",
-      "stock": 0,
-      "status": false,
-      "image": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2025/09/10/iphone-17-pro-max-cosmic-orange-pdp-image-position-1-cosmic-orange-color-vn-vi.jpg"
+      "status": true,
+      "id": "2"
     },
     {
       "id": "3",

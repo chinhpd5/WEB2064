@@ -57,3 +57,21 @@ export const addProduct = async (data) =>{
     console.log(error);
   }
 }
+
+export const updateProduct = async (id, data) =>{
+  try {
+    const res = await fetch(`http://localhost:3000/products/${id}`,{
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })    
+    if(res.ok){
+      window.location = 'product-list.html'
+      alert("Cập nhật thành công")
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}

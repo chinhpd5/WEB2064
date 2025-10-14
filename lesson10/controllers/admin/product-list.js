@@ -21,6 +21,7 @@ const renderProduct = (list) => {
         <td>${item.status ? 'Còn hàng': 'Hết hàng'}</td>
         <td>  
           <button class="btn btn-danger" onclick="handleDelete('${item.id}')">Xóa</button>
+          <a class="btn btn-warning" href="./product-edit.html?id=${item.id}">Sửa</a>
         </td>
       </tr>
     `
