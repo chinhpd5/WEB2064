@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quản lý sản phẩm</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
@@ -50,7 +50,7 @@
       .sidebar {
         position: fixed;
         transform: translateX(-110%);
-        transition: transform .25s ease-in-out;
+        transition: transform 0.25s ease-in-out;
         z-index: 1045;
       }
 
@@ -67,7 +67,7 @@
       }
 
       .overlay.show {
-        display: block
+        display: block;
       }
     }
   </style>
@@ -80,7 +80,7 @@
       <div class="px-3">
         <h4 class="mb-3">Admin</h4>
         <p class="small">Xin chào, Quản trị viên</p>
-        <hr class="border-light">
+        <hr class="border-light" />
         <nav class="nav flex-column gap-1">
           <a class="nav-link active" href="#"><i class="bi bi-speedometer2"></i> Tổng quan</a>
           <a class="nav-link" href="#"><i class="bi bi-people"></i> Người dùng</a>
@@ -89,7 +89,9 @@
           <a class="nav-link" href="#"><i class="bi bi-gear"></i> Cài đặt</a>
         </nav>
         <div class="mt-4">
-          <button id="logoutBtn" class="btn btn-sm btn-light text-primary">Đăng xuất</button>
+          <button id="logoutBtn" class="btn btn-sm btn-light text-primary">
+            Đăng xuất
+          </button>
         </div>
       </div>
     </aside>
@@ -103,17 +105,32 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h2 class="m-0">Danh sách sản phẩm</h2>
           <a href="" class="btn btn-primary">Thêm mới</a>
-            <!-- Nội dung trong đây -->
-            <!--  table -->
-            <!--  Hiển thị giao diện table: Danh sách sản phẩm  -->
-            <!-- Thực hành chức năng xóa -->
+          <!-- Nội dung trong đây -->
+          <!--  table -->
+          <!--  Hiển thị giao diện table: Danh sách sản phẩm  -->
+          <!-- Thực hành chức năng xóa -->
         </div>
-
-
+         <table class="table table-bordered table-hover table-striped">
+            <thead>
+              <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tên sản phẩm</th>
+                <th scope="col">Hình ảnh</th>
+                <th scope="col">Giá bán</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">Danh mục</th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+             
+            </tbody>
+          </table>
       </div>
     </main>
   </div>
-
+  <script type="module" src="../../controllers/admin/product-list.js"></script>
 </body>
 
 </html>
