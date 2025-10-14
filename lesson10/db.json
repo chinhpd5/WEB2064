@@ -26,6 +26,15 @@
       "stock": 8,
       "status": true,
       "image": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2025/01/23/galaxy-s25-ultra-titan-silver-blue-1-8225f9e1f4.png"
+    },
+    {
+      "id": "1cb5",
+      "name": "chinhpd5",
+      "price": 123,
+      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "stock": 321,
+      "category": "Phụ kiện",
+      "status": true
     }
   ]
 }

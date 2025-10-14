@@ -20,7 +20,7 @@ const renderProduct = (list) => {
         <td>${item.category}</td>
         <td>${item.status ? 'Còn hàng': 'Hết hàng'}</td>
         <td>  
-          <button class="btn btn-danger" onclick="handleDelete(${item.id})">Xóa</button>
+          <button class="btn btn-danger" onclick="handleDelete('${item.id}')">Xóa</button>
         </td>
       </tr>
     `
