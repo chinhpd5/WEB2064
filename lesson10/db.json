@@ -19,13 +19,13 @@
       "image": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2025/09/10/iphone-17-pro-max-cosmic-orange-pdp-image-position-1-cosmic-orange-color-vn-vi.jpg"
     },
     {
-      "id": "3",
-      "name": "Samsung Galaxy S25 Ultra",
+      "name": "Samsung Galaxy S25 Ultra udapte",
+      "iamge": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2025/01/23/galaxy-s25-ultra-titan-silver-blue-1-8225f9e1f4.png",
       "price": 22990000,
+      "stock": 10,
       "category": "Điện thoại",
-      "stock": 8,
-      "status": true,
-      "image": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2025/01/23/galaxy-s25-ultra-titan-silver-blue-1-8225f9e1f4.png"
+      "status": false,
+      "id": "3"
     },
     {
       "id": "4",

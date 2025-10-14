@@ -52,3 +52,21 @@ export const addProduct = async (data, url='./product-list.html') => {
     
   }
 }
+
+export const updateProduct = async (id, data, url='./product-list.html') => {
+  try {
+    const res = await fetch(`http://localhost:3000/products/${id}`,{
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    if(res.ok){
+      window.location= url
+    }
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
