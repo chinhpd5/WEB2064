@@ -79,7 +79,7 @@ const init = async () => {
         status: inputStatus.value == '1' ? true: false
       }
   
-      console.log(data);
+      // console.log(data);
       updateProduct(id, data)
     })
 }
