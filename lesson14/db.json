@@ -1,26 +1,33 @@
 {
   "students": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Nguyễn Văn A",
       "age": 20,
       "email": "vana@example.com",
       "major": "Công nghệ thông tin"
     },
     {
-      "id": 2,
-      "name": "Trần Thị B",
-      "age": 21,
+      "name": "Trần Thị B update",
+      "age": 22,
       "email": "thib@example.com",
-      "major": "Kế toán"
+      "major": "Marketing",
+      "id": "2"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Phạm Văn C",
       "age": 19,
       "gender": "Nam",
       "email": "vanc@example.com",
       "major": "Marketing"
+    },
+    {
+      "id": "b435",
+      "name": "chinhpd5",
+      "age": 20,
+      "email": "chinhpd5@fpt.edu.vn",
+      "major": "Kế toán"
     }
   ]
 }

@@ -10,7 +10,35 @@
 <body>
   <div class="container">
     <h1>Cập nhật</h1>
+     <form id="form">
+     
+      <div class="mb-3">
+        <label for="name" class="form-label">Họ và tên</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+
+      <div class="mb-3">
+        <label for="age" class="form-label">Tuổi</label>
+        <input type="number" class="form-control" id="age">
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+
+       <div class="mb-3">
+        <label for="major" class="form-label">Email</label>
+        <select class="form-select" id="major">
+          <option value="Công nghệ thông tin">Công nghệ thông tin</option>
+          <option value="Kế toán">Kế toán</option>
+          <option value="Marketing">Marketing</option>
+        </select>
+      </div>
     
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
   </div>
 
   <script src="./controllers/edit.js"></script>
