@@ -1,0 +1,26 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Nguyễn Văn A",
+      "age": 20,
+      "email": "vana@example.com",
+      "major": "Công nghệ thông tin"
+    },
+    {
+      "id": 2,
+      "name": "Trần Thị B",
+      "age": 21,
+      "email": "thib@example.com",
+      "major": "Kế toán"
+    },
+    {
+      "id": 3,
+      "name": "Phạm Văn C",
+      "age": 19,
+      "gender": "Nam",
+      "email": "vanc@example.com",
+      "major": "Marketing"
+    }
+  ]
+}
