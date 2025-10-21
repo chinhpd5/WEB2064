@@ -1,0 +1,25 @@
+{
+  "name": "web2064",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server-auth db.json --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chinhpd5/WEB2064.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chinhpd5/WEB2064/issues"
+  },
+  "homepage": "https://github.com/chinhpd5/WEB2064#readme",
+  "dependencies": {
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0"
+  }
+}
